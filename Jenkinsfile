@@ -7,7 +7,7 @@ pipeline {
   stages{
     stage("Maven Build"){
       steps{
-        bat "mvn clean package -Dv=${'BuildNumber'} sonar:sonar"
+        bat "mvn clean package -Dv=${'Build_Number'} sonar:sonar"
       }
     }
     stage("Deploy To Dev"){
