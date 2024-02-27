@@ -2,12 +2,12 @@
 pipeline {
   agent any
   tools {
-    maven 'maven2'
+    maven 'Maven'
   }
   stages{
     stage("Maven Build"){
       steps{
-        sh "mvn clean package"
+        bat "mvn clean package -Dv=${'BuildNumber'} sonar:sonar"
       }
     }
     stage("Deploy To Dev"){
